@@ -9,12 +9,12 @@ import {
 
 const mainRouter = express();
 
-mainRouter.get("/", getTaskPage);
+mainRouter.get("/getTask", getTaskPage);
 
-mainRouter.post("/api/createTask", createTask);
+mainRouter.post("/createTask", createTask);
 
-mainRouter.put("/api/updateTask/:id", updateTask);
+mainRouter.put("/updateTask/:id", updateTask);
 
-mainRouter.delete("/api/deleteTask/:id", deleteTask);
+mainRouter.delete("/deleteTask/:id", deleteTask);
 
 export default mainRouter;
