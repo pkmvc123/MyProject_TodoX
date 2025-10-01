@@ -12,7 +12,14 @@ const port = process.env.PORT || 3000;
 const hostname = process.env.HOST_NAME || "127.0.0.1";
 
 viewEnginer(server);
-server.use(cors({ origin: "http://localhost:5173" }));
+
+if (process.env.NODE_ENV !== "production") {
+  server.use(express.static("../Frontend/dist"));
+
+  server.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../Frontend/dist/index.html"));
+  });
+}
 
 server.use("/api", mainRouter);
 
