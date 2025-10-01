@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    /* Dark-friendly todo app color palette */
+    --background: 222 47% 8%; /* gần đen */
+    --background-secondary: 222 40% 12%;
+    --foreground: 210 40% 95%; /* chữ sáng */
+
+    --card: 222 40% 12%;
+    --card-foreground: 210 40% 98%;
+    --card-shadow: 222 30% 5%;
+
+    --popover: 222 40% 12%;
+    --popover-foreground: 210 40% 95%;
+
+    /* Accent / brand colors */
+    --primary: 258 89% 65%;
+    --primary-light: 255 92% 76%;
+    --primary-dark: 263 69% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 204 94% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --info: 226 100% 70%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 258 89% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(255 92% 76%) 0%,
+      hsl(263 69% 50%) 100%
+    );
+    --gradient-background: linear-gradient(
+      135deg,
+      hsl(222 47% 8%) 0%,
+      hsl(222 40% 12%) 100%
+    );
+    --gradient-card: linear-gradient(
+      135deg,
+      hsl(222 40% 12%) 0%,
+      hsl(222 30% 10%) 100%
+    );
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4),
+      0 2px 4px -2px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5),
+      0 4px 6px -4px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(258 89% 65% / 0.4);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 40% 12%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 258 89% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 222 30% 15%;
+    --sidebar-ring: 258 89% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
